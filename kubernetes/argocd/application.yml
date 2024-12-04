@@ -50,7 +50,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-argo-application
+  name: argocd-application
   namespace: argocd
 spec:
   project: default
@@ -58,7 +58,7 @@ spec:
   source:
     repoURL: https://github.com/sahilphule/argocd.git
     targetRevision: HEAD
-    path: dev/app
+    path: kubernetes/admin-portal/app
   destination: 
     server: https://kubernetes.default.svc
     namespace: admin-portal
