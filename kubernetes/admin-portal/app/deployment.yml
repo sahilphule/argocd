@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: admin-portal-app-deployment
-  # namespace: admin-portal
+  namespace: admin-portal
   labels:
     deployment: admin-portal-app
 spec:
