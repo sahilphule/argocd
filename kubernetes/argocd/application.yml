@@ -1,0 +1,19 @@
+apiVersion: argoproject.io/v1/alpha1
+kind: Application
+metadata:
+  name: argocd-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL:
+    targetRevision: HEAD
+    path: kubernetes/admin-portal
+  
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: admin-portal
+  
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
